@@ -1,0 +1,36 @@
+Application name: Auto Finder
+Client team: Ux-plorers
+
+
+Members and Email (see google doc)
+
+
+Use cases:
+1. Search: user enter criteria and perform search. Must have multiple navigation methods to get into search result. Must be able to refine search after getting the result.
+Result page (feed) should be optimized.
+2. (optional) Submitting a form to contact dealer: Field grouping. Error handling.  Feedback.
+3. Price comparison: checkbox comparison (upper limit 3) for each search result entry.  comparison page: popup js window. 
+
+
+Requirements:
+
++ Search for used/new cars, criteria:
+  - used/new
+  - make, model, year, (milage)
+  - zip code, distance
+
+Get from dealers, available or not with a specific dealer
++ !!price comparison
++ save previous search (cookie)
++ contact dealer for test driver
+  - form: contact email + phone + name
+
++ On result page:
+  - sort by
+  - (optional) financial information
+  - price comparison
+
+custom search, mandatory: zip code, new/used
+
+
+Usability  test report (October 20 and 22)
