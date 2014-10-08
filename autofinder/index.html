@@ -74,19 +74,25 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Name</label>
                             <div class="col-md-5">
-                                <input type="text" class="form-control" name="cust_name" />
+                                <input type="text" class="form-control" name="cust_name" placeholder="your name"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Email</label>
                             <div class="col-md-5">
-                                <input type="text" class="form-control" name="cust_email" />
+                                <input type="text" class="form-control" name="cust_email" placeholder="your email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Phone #</label>
+                            <div class="col-md-5">
+                                <input type="tel" class="form-control" name="cust_phone" placeholder="phone number (optional)"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Comments</label>
                             <div class="col-md-5">
-                                <textarea class="form-control" rows="3" name="cust_comment"></textarea>
+                                <textarea class="form-control" rows="3" name="cust_comment"  placeholder="comments"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -144,6 +150,18 @@
                     }
                  }
              },
+            cust_phone: {
+                validators: {
+                    stringLength: {
+                    min: 0,
+                    max: 10,
+                    message: 'phone number is too long'
+                    },
+                    integer: {
+                    message: 'No letters'
+                    }
+                }
+            },
             cust_comment: {
                 validators: {
                     notEmpty: {
