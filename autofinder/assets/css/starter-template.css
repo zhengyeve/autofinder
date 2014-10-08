@@ -5,3 +5,11 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+div#find_options {
+	position: absolute;
+	left: 50%;
+}
+.list-group {
+	position: relative;
+	left: -50%
+}
