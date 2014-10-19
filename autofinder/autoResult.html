@@ -29,10 +29,9 @@
 
     <style type="text/css">
     #resultList {
-        font-family: Georgia, "Times New Roman", Times, serif;
         width: 70%;
         margin: 0 auto;
-        border-top: 1px dotted #CCC;
+        border-top: 2px dotted #CCC;
     }
 
     #resultList ul {
@@ -42,13 +41,16 @@
     }
 
     #resultList ul li {
+        cursor: pointer;
         width: 100%;
         padding: 0 20px;
-        background: #EEE;
+        background: #FFFFFF;
         padding-bottom: 10px;
         height: 150px;
         overflow: hidden;
-        border-bottom: 1px dotted #CCC;
+        border-left: 1px solid #CCC;
+        border-right: 1px solid #CCC;
+        border-bottom: 1px solid #CCC;
         
         -webkit-animation: myanim 1s;
         -moz-animation: myanim 1s;
@@ -64,7 +66,7 @@
     #resultList li:hover {
         background: #F2FEFF;
         min-height: 110px;
-        height: 250px;
+        height: 200px;
         overflow: visible;
     }
 
@@ -74,14 +76,13 @@
         font-size: 1.2em;
         padding-bottom: 5px;
         padding-top: 20px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #BF5841;
+        color: #000000;
         border-bottom: 1px dotted #CCC;
         margin-bottom: 10px;
     }
 
     #resultList img {
-        border: 10px solid #ffffff;
+        border: 5px solid #C2EBF7;
         float: left;
         width: 80px;
         margin-right: 10px;
@@ -89,6 +90,16 @@
 
     #resultList .auto-content {
         float: left;
+    }
+
+    #resultList .auto-checkbox {
+        float: left;
+        margin-right: 20px;
+    }
+    #compareBtn {
+        position: fixed;
+        bottom: 50px;
+        right:  50px;
     }
     </style>
   </head>
@@ -117,8 +128,10 @@
     </div>
 
     <div class="container">
-      <div id="resultList"></div>
+        <div id="resultList"></div>
     </div>
+
+    <a id="compareBtn" href = "#" class = "btn btn-info">Compare NOW</a>
     
     <!-- Bootstrap core JavaScript
      ================================================== -->
@@ -134,16 +147,37 @@
     <script>
     var result_html;
     var cars;
+    var cars_selected = [];
+    var MAX_NUM_COMPARE = 2;
+    function checkAuto(i) {
+        var idx = cars_selected.indexOf(i);
+        if (idx < 0){
+            // validation
+            if (cars_selected.length + 1 <= MAX_NUM_COMPARE){
+                cars_selected.push(i);
+                $("#auto_checkbox"+i).prop("checked", true);
+            }
+            else
+            {
+                alert("You can only select "+MAX_NUM_COMPARE+" cars.");
+            }
+        }else{
+            cars_selected.splice(idx,1);
+            $("#auto_checkbox"+i).prop("checked", false);
+        }
+    }
     $(document).ready(function(){
       
       $.getJSON('sample.json', function(info){
+          var i = 0;
           cars = info.cars;
           //cars.sort(function(a,b) { return b.Make.localeCompare(a.Make) } );
           result_html = '<ul class="resultList">';
           for (c in cars){
             var car = cars[c];
-            result_html += '<li>';
-            result_html += '<h2>'+ car.Make +" " + car.Model + '</h2>';
+            result_html += '<li onclick="checkAuto('+i+')" >';
+            result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
+            result_html +=  '<input id="auto_checkbox'+i+'" class="auto-checkbox" type="checkbox" class="checkbox" />';
             result_html += '<img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/>';
             result_html += '<div class = "auto-content">';
             result_html +=  '<ul class="details-list">';
@@ -154,26 +188,11 @@
             result_html += '</div>';
 
             result_html += '</li>';
+            i++;
           }
-          result_html += '</ul>';
 
 
           $('#resultList').html(result_html);
-
-          /*
-          var output = '<ul class="searchresults">';
-            $.each(data, function(key, val) {
-                if ((val.name.search(myExp) != -1) ||
-                (val.bio.search(myExp) != -1)) {
-                    output += '<li>';
-                    output += '<h2>'+ val.name +'</h2>';
-                    output += '<img src="images/'+ val.shortname +'_tn.jpg" alt="'+ val.name +'" />';
-                    output += '<p>'+ val.bio +'</p>';
-                    output += '</li>';
-                }
-            });
-            output += '</ul>';
-          */
 
       }); //getJSON
 
