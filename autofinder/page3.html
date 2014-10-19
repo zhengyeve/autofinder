@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Nav Page</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="./assets/css/starter-template.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="./assets/js/ie-emulation-modes-warning.js"></script>
+
+  <style>
+  .panel-title {
+    padding: 6px;
+    vertical-align: middle;
+  }
+  </style>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+
+    <body>
+
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact" data-toggle="modal" data-target="#contact-modal">Contact Dealer</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <div class="container">
+
+        <div class="mod-content expanded-content">
+          <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Make</a></li>
+            <li class="active">Style</li>
+          </ol>
+
+
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        Sedan 4D
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-warning">Choose this style</button>
+                  </div>
+                </div>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <div class="engines-and-drivetrains">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+
+                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, 2.5 Liter</div></td></tr>
+
+                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="icons-container">
+
+                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
+
+
+                    <div class="engine-container">
+                      <span class="icon-styles engine"></span>
+                      
+                      <br>
+                      169 HP 
+                      
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        LE Sedan 4D
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-warning">Choose this style</button>
+                  </div>
+                </div>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="engines-and-drivetrains">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+
+                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, 2.5 Liter <a href="javascript:void(0)" class="btn-show-hide plus" style="cursor: pointer;"></a></div><div class="all-the-rest">V6, 3.5 Liter</div></td></tr>
+
+                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="icons-container">
+
+                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry LE Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
+
+
+                    <div class="engine-container">
+                      <span class="icon-styles engine"></span>
+                      
+                      <br>
+                      
+                      up to<br>
+                      268 HP 
+                      
+                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
+                      
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        SE Sedan 4D
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-warning">Choose this style</button>
+                  </div>
+                </div>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="engines-and-drivetrains">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+
+                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, 2.5 Liter <a href="javascript:void(0)" class="btn-show-hide plus" style="cursor: pointer;"></a></div><div class="all-the-rest">V6, 3.5 Liter</div></td></tr>
+
+                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="icons-container">
+
+                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry SE Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
+
+
+                    <div class="engine-container">
+                      <span class="icon-styles engine"></span>
+                      
+                      <br>
+                      
+                      up to<br>
+                      268 HP 
+                      
+                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
+                      
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                        XLE Sedan 4D
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-warning">Choose this style</button>
+                  </div>
+                </div>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="engines-and-drivetrains">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+
+                        <tr><td class="first">Engine(s):</td><td><div class="first">V6, 3.5 Liter <a href="javascript:void(0)" class="btn-show-hide plus" style="cursor: pointer;"></a></div><div class="all-the-rest">4-Cyl, 2.5 Liter</div></td></tr>
+
+                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="icons-container">
+
+                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry XLE Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
+
+
+                    <div class="engine-container">
+                      <span class="icon-styles engine"></span>
+                      
+                      <br>
+                      
+                      up to<br>
+                      268 HP 
+                      
+                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
+                      
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                        Hybrid Sedan 4D
+                      </a>
+                    </h4>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="button" class="btn btn-warning">Choose this style</button>
+                  </div>
+                </div>
+              </div>
+              <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="engines-and-drivetrains">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+
+                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, Hybrid, 2.4 Liter</div></td></tr>
+
+                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="icons-container">
+
+                    <div class="mpg-container"><span class="icon-styles mpg-h"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry Hybrid Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>34 MPG</div>
+
+
+                    <div class="engine-container">
+                      <span class="icon-styles engine"></span>
+                      
+                      <br>
+                      
+                      up to<br>
+                      147 HP 
+                      
+                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
+                      
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div> 
+      </div>
+    </div><!-- /.container -->
+    
+    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Contact Dealer</h4>
+          </div>
+
+          <div class="modal-body">
+            <!-- The form is placed inside the body of modal -->
+            <form id="contact-form" method="post" class="form-horizontal">
+              <div class="form-group">
+                <label class="col-md-3 control-label">Name</label>
+                <div class="col-md-5">
+                  <input type="text" class="form-control" name="cust_name" placeholder="your name"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Email</label>
+                <div class="col-md-5">
+                  <input type="text" class="form-control" name="cust_email" placeholder="your email"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Phone #</label>
+                <div class="col-md-5">
+                  <input type="tel" class="form-control" name="cust_phone" placeholder="phone number (optional)"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Comments</label>
+                <div class="col-md-5">
+                  <textarea class="form-control" rows="3" name="cust_comment"  placeholder="comments"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-5 col-md-offset-3">
+                  <button type="submit" class="btn btn-default">submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+    <!-- auto finder javascript
+    ================================================== -->
+    <script>
+    $(document).ready(function(){
+
+      $('#contact-form').bootstrapValidator({
+       message: 'This value is not valid',
+       feedbackIcons: {
+         valid: 'glyphicon glyphicon-ok',
+         invalid: 'glyphicon glyphicon-remove',
+         validating: 'glyphicon glyphicon-refresh'
+       },
+       fields: {
+         cust_name: {
+           validators: {
+             notEmpty: {
+               message: 'Your name is required'
+             },
+             stringLength: {
+               min: 1,
+               max: 40,
+               message: 'Your Name must be more than 1 and less than 40 characters long'
+             }
+           }
+         },
+         cust_email: {
+           validators: {
+             notEmpty: {
+               message: 'Your email is required'
+             },
+             emailAddress: {
+              message: 'The input is not a valid email address'
+            }
+          }
+        },
+        cust_phone: {
+          validators: {
+            stringLength: {
+              min: 0,
+              max: 10,
+              message: 'phone number is too long'
+            },
+            integer: {
+              message: 'No letters'
+            }
+          }
+        },
+        cust_comment: {
+          validators: {
+            notEmpty: {
+              message: 'Your comment is required'
+            },
+            stringLength: {
+              min: 10,
+              max: 1000,
+              message: 'The Comment must be more than 10 and less than 1000 characters long'
+            }
+          }
+        }
+      }
+    });
+
+$('#contact-modal').on('shown.bs.modal', function() {
+  $('#contact-form').bootstrapValidator('resetForm', true);
+});
+
+});
+</script>
+
+</body>
+</html>
