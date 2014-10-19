@@ -41,6 +41,7 @@
     }
 
     #resultList ul li {
+        cursor: pointer;
         width: 100%;
         padding: 0 20px;
         background: #FFFFFF;
@@ -81,7 +82,7 @@
     }
 
     #resultList img {
-        border: 10px solid #ffffff;
+        border: 5px solid #C2EBF7;
         float: left;
         width: 80px;
         margin-right: 10px;
@@ -146,18 +147,22 @@
     <script>
     var result_html;
     var cars;
+    function checkAuto(i) {
+        //$("#auto_checkbox"+i).prop( "checked");
+        $("#auto_checkbox"+i).trigger('click'); 
+    }
     $(document).ready(function(){
       
       $.getJSON('sample.json', function(info){
+          var i = 0;
           cars = info.cars;
           //cars.sort(function(a,b) { return b.Make.localeCompare(a.Make) } );
           result_html = '<ul class="resultList">';
           for (c in cars){
             var car = cars[c];
-            result_html += '<li>';
-
+            result_html += '<li onclick="checkAuto('+i+')" >';
             result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
-            result_html +=  '<input class="auto-checkbox" type="checkbox" class="checkbox" />';
+            result_html +=  '<input id="auto_checkbox'+i+'" class="auto-checkbox" type="checkbox" class="checkbox" />';
             result_html += '<img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/>';
             result_html += '<div class = "auto-content">';
             result_html +=  '<ul class="details-list">';
@@ -168,26 +173,8 @@
             result_html += '</div>';
 
             result_html += '</li>';
+            i++;
           }
-          // for placement only
-          for (c in cars){
-            var car = cars[c];
-            result_html += '<li>';
-
-            result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
-            result_html +=  '<input class="auto-checkbox" type="checkbox" class="checkbox" />';
-            result_html += '<img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/>';
-            result_html += '<div class = "auto-content">';
-            result_html +=  '<ul class="details-list">';
-            result_html +=  '<p>Price: '+ car.Model +'</p>';
-            result_html +=  '<p>Mile: '+ car.Miles +'</p>';
-            result_html +=  '<p>Postal code: '+ car.Postal_code +'</p>';
-            result_html +=  '</ul>';
-            result_html += '</div>';
-
-            result_html += '</li>';
-          }
-          result_html += '</ul>';
 
 
           $('#resultList').html(result_html);
