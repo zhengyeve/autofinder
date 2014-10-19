@@ -147,9 +147,24 @@
     <script>
     var result_html;
     var cars;
+    var cars_selected = [];
+    var MAX_NUM_COMPARE = 2;
     function checkAuto(i) {
-        //$("#auto_checkbox"+i).prop( "checked");
-        $("#auto_checkbox"+i).trigger('click'); 
+        var idx = cars_selected.indexOf(i);
+        if (idx < 0){
+            // validation
+            if (cars_selected.length + 1 <= MAX_NUM_COMPARE){
+                cars_selected.push(i);
+                $("#auto_checkbox"+i).prop("checked", true);
+            }
+            else
+            {
+                alert("You can only select "+MAX_NUM_COMPARE+" cars.");
+            }
+        }else{
+            cars_selected.splice(idx,1);
+            $("#auto_checkbox"+i).prop("checked", false);
+        }
     }
     $(document).ready(function(){
       
@@ -178,21 +193,6 @@
 
 
           $('#resultList').html(result_html);
-
-          /*
-          var output = '<ul class="searchresults">';
-            $.each(data, function(key, val) {
-                if ((val.name.search(myExp) != -1) ||
-                (val.bio.search(myExp) != -1)) {
-                    output += '<li>';
-                    output += '<h2>'+ val.name +'</h2>';
-                    output += '<img src="images/'+ val.shortname +'_tn.jpg" alt="'+ val.name +'" />';
-                    output += '<p>'+ val.bio +'</p>';
-                    output += '</li>';
-                }
-            });
-            output += '</ul>';
-          */
 
       }); //getJSON
 
