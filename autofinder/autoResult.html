@@ -553,14 +553,12 @@
         $('#contact-modal').modal('show');
     }
 
-    $("#contact-modal").on('hidden.bs.modal', function () {
-        $('#car-detail-modal').modal('show');
-    })
-
     function showCarDetail(i)
     {
         $('#car-detail-modal .modal-title').html(cars[i].Year+" "+cars[i].Make+" "+cars[i].Model);
+        $('#car-detail-modal .detail-img').html('<img src="'+cars[i].Tn+'"/>');
         $('#car-detail-modal').modal('show');
+
 
     }
     
@@ -573,7 +571,9 @@
     }
     
     $(document).ready(function(){
-
+      $("#contact-modal").on('hidden.bs.modal', function () {
+        $('#car-detail-modal').modal('show');
+      })
 
       $.getJSON('sample.json', function(info){
           var i = 0;
