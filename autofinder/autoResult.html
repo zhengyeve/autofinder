@@ -50,6 +50,37 @@
          border-top-left-radius: 5px;
          border-top-right-radius: 5px;
      }
+
+     #car-detail-modal .detail-summary-header {
+        height: 100px;
+     }
+
+     #car-detail-modal .details-list {
+        padding-left: 20px;
+     }
+
+     #dealer-contact-btn {
+        float: right;
+     }
+
+     #car-detail-modal .modal-body {
+        min-height: 400px;
+     }
+
+    #car-detail-modal .detail-summary {
+        float: left;
+        padding: 0;
+    }
+    
+
+    #car-detail-modal  img {
+        border: 5px solid #f0ad4e;
+        float: left;
+        height: 80px;
+        width: 80px;
+        margin-right: 10px;
+    }
+
     #resultList {
         width: 70%;
         margin: 0 auto;
@@ -211,7 +242,66 @@
                 <h4 class="modal-title">Error</h4>
               </div>
               <div class="modal-body">
-                <p>Car details.</p>
+              <button id="dealer-contact-btn" type="button" class="btn btn-success btn-xs">Contact Seller / Dealer</button>
+                <div class="detail-summary-header">
+                <div class="detail-img"><img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/></div>
+                <div class = "detail-summary">
+                    <ul class="details-list">
+                        <p>Price: : 1111</p>
+                        <p>Mile: 12233</p>
+                        <p>Postal code: 90032</p>
+                    </ul>
+                </div>
+                <div class = "detail-summary">
+                    <ul class="details-list">
+                        <p>Engine: : v8</p>
+                        <p>Title: clean title</p>
+                        <p>Condition: Like new</p>
+                    </ul>
+                </div>
+                </div>
+                <div class = "detail-text">
+                    Engine: 1.8l -4 Cylinders - -VTEC <br>
+                    Front Wheel drive <br>
+                    Torque @ RPM 128 AT 4300<br>
+                    Throttle, Drive by Wire System<br>
+                    Horsepower @ RMP 140 AT 6300<br>
+                    16 Valves<br><br>
+
+                    Automatic Transmission<br>
+                    Folding Seats Rear<br>
+                    Rear Defoggers<br>
+                    Air Conditioning, Air filter<br>
+                    Power Doors Locks, Power Windows<br>
+                    Remote Keyless entry<br>
+                    12 Volt Power Outlet(s)<br>
+
+                    Audio - CD/MP3, CD-AMP3<br>
+                    Audio Radio: AM/FM; 160-watt<br>
+                    Audio: Volume, speed sensing; Digital media auxiliary jack<br>
+                    4- Super Stereo Audio -- Speakers<br>
+
+                    ABS, Brakes<br>
+
+                    Child Safety features: Locks, rear doors<br>
+                    Passenger Airbag- Occupant Sensor<br>
+                    Side Curtain, Airbags<br>
+                    Airbag - Front Passenger, Dual-stage<br>
+                    Tire Pressure Monitor<br>
+                    LATCH Child Seat Anchors<br>
+                    Daytime running lights<br>
+                    Engine Immobilizing System<br>
+
+                    Runs flawlessly...<br>
+
+                    Excellent condition, SUPER GAS SAVER AND RELIABLE CAR!<br>
+
+                    Salvage title; There was no airbag deployment, no frame or engine damage. <br>
+
+                    There is nothing wrong with the car basically a brand new car with only 31xxx Miles.<br>
+
+                    Smog, Brakes & Lamps inspections: Done
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -278,7 +368,6 @@
             var car = cars[c];
             result_html += '<li>';
             result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
-            /*result_html +=  '<input id="auto_checkbox'+i+'" class="auto-checkbox" type="checkbox" class="checkbox" />';*/
             result_html += '<input type="checkbox" name="cbG04" id="auto_checkbox'+i+'" class="css-checkbox"><label for="cbG04" class="css-label cb0" onclick="checkAuto('+i+')"></label>';
             
             result_html += '<img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/>';
