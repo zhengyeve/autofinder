@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Nav Page</title>
+    <title>Auto Finder</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
     <![endif]-->
 
     <style type="text/css">
-    .modal-header {
+    #select-error-modal .modal-header {
         padding:9px 15px;
         border-bottom:1px solid #eee;
         background-color: #FF4F4F;
@@ -39,6 +39,53 @@
          border-top-left-radius: 5px;
          border-top-right-radius: 5px;
      }
+     #car-detail-modal .modal-header {
+        padding:9px 15px;
+        border-bottom:1px solid #eee;
+        background-color: #428bca;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-topright: 5px;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+     }
+     #car-detail-modal .detail-text {
+        height:300px;
+        overflow: scroll;
+     }
+
+
+     #car-detail-modal .detail-summary-header {
+        height: 100px;
+     }
+
+     #car-detail-modal .details-list {
+        padding-left: 20px;
+     }
+
+     #dealer-contact-btn {
+        float: right;
+     }
+
+     #car-detail-modal .modal-body {
+        min-height: 400px;
+     }
+
+    #car-detail-modal .detail-summary {
+        float: left;
+        padding: 0;
+    }
+    
+
+    #car-detail-modal  img {
+        border: 5px solid #f0ad4e;
+        float: left;
+        height: 80px;
+        width: 80px;
+        margin-right: 10px;
+    }
+
     #resultList {
         width: 70%;
         margin: 0 auto;
@@ -77,8 +124,6 @@
 
     #resultList li:hover {
         background: #F2FEFF;
-        min-height: 110px;
-        height: 200px;
         overflow: visible;
     }
 
@@ -104,10 +149,15 @@
         float: left;
     }
 
+    #resultList .auto-detail-btn {
+        float: right;
+    }
+
+
     #compareBtn {
         position: fixed;
         bottom: 50px;
-        right:  50px;
+        left:  50px;
     }
     input[type=checkbox].css-checkbox + label.css-label.cb0 {
         float: left;
@@ -138,11 +188,52 @@
         user-select: none;
     }
 
+    .th1 { 
+        font-size: 16pt;
+        height: 48px;
+        line-height:48px;
+    }
+    .th2 { 
+        font-size: 14pt;
+        font-weight: bold;
+        height: 32px;
+        color: #fff;
+        background-color: #777;
+    }
+    .th3 {
+        background-color: #ddd;
+        height: 32px;
+    }
+    .table {
+        width: 910px;
+        margin-top: 10px;
+        line-height:32px;
+        vertical-align: middle;
+        border-collapse: collapse;
+    }
+    .table td {
+        border: solid 1px #bbc;
+    }
+    
+    .table tr:hover {
+        background: #F2FEFF;
+        overflow: visible;
+    }
+    
+    .cp_td {
+        width: 30%;
+    }
+    
+    .price {
+        font-weight: bold;
+    }
+    </style>
     </style>
   </head>
 
   <body>
 
+    
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -152,13 +243,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="./index.html">Auto Finder</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact" data-toggle="modal" data-target="#contact-modal">Contact Dealer</a></li>
+            <li><a>League of Berryessa</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -168,7 +257,7 @@
         <div id="resultList"></div>
     </div>
 
-    
+    <!-- Error dialog -->
     <div class="modal fade" id="select-error-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -177,7 +266,84 @@
                 <h4 class="modal-title">Error</h4>
               </div>
               <div class="modal-body">
-                <p>Only two car can be selected.&hellip;</p>
+                <p>Please select 2 cars to compare.&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div><!-- /.modal-content -->
+        </div>
+    </div>
+
+    <!-- Car detail dialog -->
+    <div class="modal fade" id="car-detail-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Error</h4>
+              </div>
+              <div class="modal-body">
+              <button id="dealer-contact-btn" type="button" class="btn btn-success btn-xs">Contact Seller / Dealer</button>
+                <div class="detail-summary-header">
+                <div class="detail-img"><img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/></div>
+                <div class = "detail-summary">
+                    <ul class="details-list">
+                        <p>Price: : 1111</p>
+                        <p>Mile: 12233</p>
+                        <p>Postal code: 90032</p>
+                    </ul>
+                </div>
+                <div class = "detail-summary">
+                    <ul class="details-list">
+                        <p>Engine: : v8</p>
+                        <p>Title: clean title</p>
+                        <p>Condition: Like new</p>
+                    </ul>
+                </div>
+                </div>
+                <div class = "detail-text">
+                    Engine: 1.8l -4 Cylinders - -VTEC <br>
+                    Front Wheel drive <br>
+                    Torque @ RPM 128 AT 4300<br>
+                    Throttle, Drive by Wire System<br>
+                    Horsepower @ RMP 140 AT 6300<br>
+                    16 Valves<br><br>
+
+                    Automatic Transmission<br>
+                    Folding Seats Rear<br>
+                    Rear Defoggers<br>
+                    Air Conditioning, Air filter<br>
+                    Power Doors Locks, Power Windows<br>
+                    Remote Keyless entry<br>
+                    12 Volt Power Outlet(s)<br>
+
+                    Audio - CD/MP3, CD-AMP3<br>
+                    Audio Radio: AM/FM; 160-watt<br>
+                    Audio: Volume, speed sensing; Digital media auxiliary jack<br>
+                    4- Super Stereo Audio -- Speakers<br>
+
+                    ABS, Brakes<br>
+
+                    Child Safety features: Locks, rear doors<br>
+                    Passenger Airbag- Occupant Sensor<br>
+                    Side Curtain, Airbags<br>
+                    Airbag - Front Passenger, Dual-stage<br>
+                    Tire Pressure Monitor<br>
+                    LATCH Child Seat Anchors<br>
+                    Daytime running lights<br>
+                    Engine Immobilizing System<br>
+
+                    Runs flawlessly...<br>
+
+                    Excellent condition, SUPER GAS SAVER AND RELIABLE CAR!<br>
+
+                    Salvage title; There was no airbag deployment, no frame or engine damage. <br>
+
+                    There is nothing wrong with the car basically a brand new car with only 31xxx Miles.<br>
+
+                    Smog, Brakes & Lamps inspections: Done
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -187,8 +353,92 @@
     </div>
 
 
+    <div class="modal fade" id="compare-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Comparing Cars</h4>
+          </div>
+          <div class="modal-body">
+            
+        <table cellspacing="0" cellpadding="3" class="table">
+            <tr class="row">
+                <td class="th3">Types</td>
+                <td class="cp_td">Accord</td>
+                <td class="cp_td">Camry</td>
+            </tr>
+            <tr class="row price">
+                <td class="th3">Price</td>
+                <td class="cp_td">8000</td>
+                <td class="cp_td">7000</td>
+            </tr>
+            <tr class="row">
+                <td colspan="5" class="th2">Main</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Title status</td>
+                <td class="cp_td">Clean</td>
+                <td class="cp_td">Clean</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Odometer</td>
+                <td class="cp_td">120000</td>
+                <td class="cp_td">130000</td>
+            </tr>
+            <tr class="row">
+                <td colspan="5" class="th2">Mechanical</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Transmission</td>
+                <td class="cp_td">Auto 4 Speed</td>
+                <td class="cp_td">Manual 5 Speed</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Drive</td>
+                <td class="cp_td">Forward</td>
+                <td class="cp_td">Forward</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Fuel</td>
+                <td class="cp_td">Gas</td>
+                <td class="cp_td">Gas</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Cylinders</td>
+                <td class="cp_td">6</td>
+                <td class="cp_td">4</td>
+            </tr>
+            <tr class="row">
+                <td colspan="5" class="th2">Outlook</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Type</td>
+                <td class="cp_td">Coupe</td>
+                <td class="cp_td">Sedan</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Size</td>
+                <td class="cp_td">Full-size</td>
+                <td class="cp_td">Full-size</td>
+            </tr>
+            <tr class="row">
+                <td class="th3">Paint color</td>
+                <td class="cp_td">Black</td>
+                <td class="cp_td">Silver</td>
+            </tr>
+        </table>
+    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-    <a id="compareBtn" href = "#" class = "btn btn-warning">Compare NOW</a>
+    <a id="compareBtn" href = "#" onclick="showCompare()" class = "btn btn-warning">Compare NOW</a>
     
     <!-- Bootstrap core JavaScript
      ================================================== -->
@@ -225,6 +475,22 @@
             $("#auto_checkbox"+i).prop("checked", false);
         }
     }
+
+    function showCarDetail(i)
+    {
+        $('#car-detail-modal .modal-title').html(cars[i].Year+" "+cars[i].Make+" "+cars[i].Model);
+        $('#car-detail-modal').modal('show');
+
+    }
+    
+    function showCompare() {
+        if (cars_selected.length != MAX_NUM_COMPARE) {
+            $('#select-error-modal').modal('show');
+        } else {
+            $("#compare-modal").modal('toggle');
+        }
+    }
+    
     $(document).ready(function(){
       
       $.getJSON('sample.json', function(info){
@@ -234,18 +500,20 @@
           result_html = '<ul class="resultList">';
           for (c in cars){
             var car = cars[c];
-            result_html += '<li onclick="checkAuto('+i+')" >';
+            result_html += '<li>';
             result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
-            /*result_html +=  '<input id="auto_checkbox'+i+'" class="auto-checkbox" type="checkbox" class="checkbox" />';*/
-            result_html += '<input type="checkbox" name="cbG04" id="auto_checkbox'+i+'" class="css-checkbox"><label for="cbG04" class="css-label cb0"></label>';
+            result_html += '<input type="checkbox" name="cbG04" id="auto_checkbox'+i+'" class="css-checkbox"><label for="cbG04" class="css-label cb0" onclick="checkAuto('+i+')"></label>';
             
             result_html += '<img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/>';
             result_html += '<div class = "auto-content">';
             result_html +=  '<ul class="details-list">';
-            result_html +=  '<p>Price: '+ car.Model +'</p>';
+            result_html +=  '<p>Price: $'+ car.Price +'</p>';
             result_html +=  '<p>Mile: '+ car.Miles +'</p>';
             result_html +=  '<p>Postal code: '+ car.Postal_code +'</p>';
             result_html +=  '</ul>';
+            result_html += '</div>';
+            result_html += '<div class = "auto-detail-btn">';
+            result_html += '<button type="button" class="btn btn-primary" data-toggle="button" onclick="showCarDetail('+i+')">Details</button>';
             result_html += '</div>';
 
             result_html += '</li>';
