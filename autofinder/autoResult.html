@@ -560,7 +560,7 @@
             result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
             result_html += '<input type="checkbox" name="cbG04" id="auto_checkbox'+i+'" class="css-checkbox"><label for="cbG04" class="css-label cb0" onclick="checkAuto('+i+')"></label>';
             
-            result_html += '<img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/>';
+            result_html += '<img src="'+car.Tn+'"/>';
             result_html += '<div class = "auto-content">';
             result_html +=  '<ul class="details-list">';
             result_html +=  '<p>Price: $'+ car.Price +'</p>';
