@@ -40,6 +40,51 @@
   #autoStyle {
     margin-top: 10px;
   }
+  .icon-styles.engine {
+    background-position: -53px -115px;
+    display: inline-block;
+    height: 18px;
+    width: 32px;
+  }
+
+  .engine {
+    background-position: -34px -34px;
+  }
+  .icon-styles.mpg {
+    background-position: 0 -115px;
+    background-position-x: 0px;
+    background-position-y: -115px;
+  }
+  .icon-styles.mpg, .icon-styles.mpg-e, .icon-styles.mpg-h {
+    display: inline-block;
+    height: 22px;
+    width: 21px;
+  }
+  .mpg {
+    background-position: 0 0;
+  }
+  .sitewide-sprite, .btn-main-cta .with-kbb-logo, #KBB-logo a, .btn-circle-arrow.up, .btn-circle-arrow.down, .btn-circle-plus, .btn-circle-minus, #Related-video-reviews .next, #Related-video-reviews .next.btn-disabled, #Related-video-reviews .prev, #Related-video-reviews .prev.btn-disabled, #Social-trigger .toggle-up, #Social-toolbar .toggle-down, #Social-toolbar .left-wrapper, #Social-toolbar .right-wrapper, #Social-trigger .right-wrapper, .btn-like-this-car, .btn-tweet-this-car, .btn-follow-this-car, .ymm-intermediary-arrow, .ymm-intermediary-arrow-med, #ColorChart .chartRow .checkmark, .exclamation-icon, .camera, .standard-overlay .standard-or-optional span, #Ymmt-tco .icon-piechart, .vehicle-scorecard .prev, .vehicle-scorecard .next, .icon-styles, #Specs-groups .specs-group-equipment table.specs-groups tr.selected .check, #Specs-groups .specs-group-equipment table.specs-groups tr.typical .check, .gallery-tab-secondary #Gallery-tab-arrow, #Gallery-main-image .play-all-overlay, #Gallery-main-image .play-all-pause, #Gallery-photo-playback .controls .prev, .fs-prev, #Gallery-photo-playback .controls .play, #Gallery-photo-playback .controls .next, .fs-next, #Gallery-photo-playback .controls .pause, .fs-pause, #Gallery-photo-playback .controls .prev.disabled, .fs-prev.disabled, #Gallery-photo-playback .controls .play.disabled, #Gallery-photo-playback .controls .next.disabled, .fs-next.disabled, .btn-rewind, .btn-forward, .btn-rewind.disabled, .btn-forward.disabled, #Awards-and-accolades .trophy-resale, .icon-print, .icon-info, section #Ymmt-intermediary.tabbed .values .selected .icon, .thermometer .therm-dialog, #Write-review-container .ui-slider-handle, #Condition-quiz-container .icon, #Write-review-container #Write-review .slider-graphic, .btn-photo, .see-larger-img, .brva-ymm-icon, #Ymmt-pricingoverview #Vehicle-rank .vehicle-rank-item .rank-head .icon.tco, footer .follow .social-icon, footer .choices-logo, #Search-box-container .magnifying-glass, #tagline a, .lb-widget-nav a {
+    background-image: url('http://file.kelleybluebookimages.com/kbb/images/sitewide-sprite114a.png');
+    background-repeat: no-repeat;
+  }
+  user stylesheet[class^="icon-"], [class*=" icon-"] {
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0px;
+  }
+  user stylesheet[class^="icon-"], [class*=" icon-"] {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  }
   </style>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -64,7 +109,7 @@
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="index.html">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact" data-toggle="modal" data-target="#contact-modal">Contact Dealer</a></li>
             </ul>
@@ -75,7 +120,7 @@
       
 
           <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li class="active">Filter</li>
           </ol>
 
@@ -104,7 +149,7 @@
                 <div class="row">
                   <div class="col-md-10">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                      <a class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                         Sedan 4D
                       </a>
                     </h4>
@@ -116,40 +161,35 @@
               </div>
               <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-                  <div class="engines-and-drivetrains">
-                    <table cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-
-                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, 2.5 Liter</div></td></tr>
-
-                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
-
-                      </tbody>
-                    </table>
+                  <div class="row">
+                    <div class="col-md-1">Engine(s):</div>
+                    <div class="col-md-11">4-Cyl, 2.5 Liter</div>
                   </div>
-                  <div class="icons-container">
 
-                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
+                  <div class="row">
+                    <div class="col-md-1">Drivetrain(s):</div>
+                    <div class="col-md-11">Front-Wheel Drive</div>
+                  </div>
 
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles mpg"></span>:</div>
+                    <div class="col-md-11">Combined 26 MPG</div>
+                  </div>
 
-                    <div class="engine-container">
-                      <span class="icon-styles engine"></span>
-                      
-                      <br>
-                      169 HP 
-                      
-                    </div>
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles engine"></span>:</div>
+                    <div class="col-md-11">169HP</div>
+                  </div>
 
                   </div>
                 </div>
               </div>
-            </div>
             <div class="panel panel-default">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-md-10">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                      <a class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                         LE Sedan 4D
                       </a>
                     </h4>
@@ -161,35 +201,26 @@
               </div>
               <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <div class="engines-and-drivetrains">
-                    <table cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-
-                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, 2.5 Liter <a href="javascript:void(0)" class="btn-show-hide plus" style="cursor: pointer;"></a></div><div class="all-the-rest">V6, 3.5 Liter</div></td></tr>
-
-                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
-
-                      </tbody>
-                    </table>
+                  <div class="row">
+                    <div class="col-md-1">Engine(s):</div>
+                    <div class="col-md-11">4-Cyl, 2.5 Liter</div>
                   </div>
-                  <div class="icons-container">
 
-                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry LE Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
-
-
-                    <div class="engine-container">
-                      <span class="icon-styles engine"></span>
-                      
-                      <br>
-                      
-                      up to<br>
-                      268 HP 
-                      
-                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
-                      
-                    </div>
-
+                  <div class="row">
+                    <div class="col-md-1">Drivetrain(s):</div>
+                    <div class="col-md-11">Front-Wheel Drive</div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles mpg"></span>:</div>
+                    <div class="col-md-11">Combined 26 MPG</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles engine"></span>:</div>
+                    <div class="col-md-11">268HP</div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -199,7 +230,7 @@
                 <div class="row">
                   <div class="col-md-10">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                      <a class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                         SE Sedan 4D
                       </a>
                     </h4>
@@ -211,34 +242,27 @@
               </div>
               <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <div class="engines-and-drivetrains">
-                    <table cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-
-                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, 2.5 Liter <a href="javascript:void(0)" class="btn-show-hide plus" style="cursor: pointer;"></a></div><div class="all-the-rest">V6, 3.5 Liter</div></td></tr>
-
-                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
-
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="icons-container">
-
-                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry SE Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
-
-
-                    <div class="engine-container">
-                      <span class="icon-styles engine"></span>
-                      
-                      <br>
-                      
-                      up to<br>
-                      268 HP 
-                      
-                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
-                      
+                  <div class="row">
+                    <div class="col-md-1">Engine(s):</div>
+                    <div class="col-md-11">
+                      <div>4-Cyl, 2.5 Liter</div>
+                      <div>V6, 3.5 Liter</div>
                     </div>
+                  </div>
 
+                  <div class="row">
+                    <div class="col-md-1">Drivetrain(s):</div>
+                    <div class="col-md-11">Front-Wheel Drive</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles mpg"></span>:</div>
+                    <div class="col-md-11">Combined 26 MPG</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles engine"></span>:</div>
+                    <div class="col-md-11">Up to 268HP</div>
                   </div>
                 </div>
               </div>
@@ -249,7 +273,7 @@
                 <div class="row">
                   <div class="col-md-10">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                      <a class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
                         XLE Sedan 4D
                       </a>
                     </h4>
@@ -261,34 +285,27 @@
               </div>
               <div id="collapseFour" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <div class="engines-and-drivetrains">
-                    <table cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-
-                        <tr><td class="first">Engine(s):</td><td><div class="first">V6, 3.5 Liter <a href="javascript:void(0)" class="btn-show-hide plus" style="cursor: pointer;"></a></div><div class="all-the-rest">4-Cyl, 2.5 Liter</div></td></tr>
-
-                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
-
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="icons-container">
-
-                    <div class="mpg-container"><span class="icon-styles mpg"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry XLE Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>26 MPG</div>
-
-
-                    <div class="engine-container">
-                      <span class="icon-styles engine"></span>
-                      
-                      <br>
-                      
-                      up to<br>
-                      268 HP 
-                      
-                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
-                      
+                  <div class="row">
+                    <div class="col-md-1">Engine(s):</div>
+                    <div class="col-md-11">
+                      <div>4-Cyl, 2.5 Liter</div>
+                      <div>V6, 3.5 Liter</div>
                     </div>
+                  </div>
 
+                  <div class="row">
+                    <div class="col-md-1">Drivetrain(s):</div>
+                    <div class="col-md-11">Front-Wheel Drive</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles mpg"></span>:</div>
+                    <div class="col-md-11">Combined 26 MPG</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles engine"></span>:</div>
+                    <div class="col-md-11">Up to 268HP</div>
                   </div>
                 </div>
               </div>
@@ -299,7 +316,7 @@
                 <div class="row">
                   <div class="col-md-10">
                     <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                      <a class="glyphicon glyphicon-chevron-right" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
                         Hybrid Sedan 4D
                       </a>
                     </h4>
@@ -311,34 +328,24 @@
               </div>
               <div id="collapseFive" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <div class="engines-and-drivetrains">
-                    <table cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-
-                        <tr><td class="first">Engine(s):</td><td><div class="first">4-Cyl, Hybrid, 2.4 Liter</div></td></tr>
-
-                        <tr><td class="first">Drivetrain(s):</td><td><div class="first">Front-Wheel Drive</div></td></tr>
-
-                      </tbody>
-                    </table>
+                  <div class="row">
+                    <div class="col-md-1">Engine(s):</div>
+                    <div class="col-md-11">4-Cyl, 2.5 Liter</div>
                   </div>
-                  <div class="icons-container">
 
-                    <div class="mpg-container"><span class="icon-styles mpg-h"></span><br>Combined <b class="icon-info clickTip" title="Highest average mileage across different style variations for the Toyota Camry Hybrid Sedan 4D displayed. MPG will vary based on selected style variation of the vehicle."></b><br>34 MPG</div>
+                  <div class="row">
+                    <div class="col-md-1">Drivetrain(s):</div>
+                    <div class="col-md-11">Front-Wheel Drive</div>
+                  </div>
 
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles mpg"></span>:</div>
+                    <div class="col-md-11">Combined 34 MPG</div>
+                  </div>
 
-                    <div class="engine-container">
-                      <span class="icon-styles engine"></span>
-                      
-                      <br>
-                      
-                      up to<br>
-                      147 HP 
-                      
-                      <b class="icon-info clickTip" title="Horsepower will vary based on selected style variation of the vehicle."></b>
-                      
-                    </div>
-
+                  <div class="row">
+                    <div class="col-md-1"><span class="icon-styles engine"></span>:</div>
+                    <div class="col-md-11">147HP</div>
                   </div>
                 </div>
               </div>
