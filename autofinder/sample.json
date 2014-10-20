@@ -21,7 +21,8 @@
 	"Location_Area": "South Bay Area",
 	"Condition": "New",
 	"Fuel": "gas",
-	"Size": "full-size"
+	"Size": "full-size",
+	"Tn": "http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"
 },
 {
 	"Posting_Title": "a",
@@ -46,7 +47,8 @@
 	"Location_Area": "South Bay Area",
 	"Condition": "New",
 	"Fuel": "gas",
-	"Size": "full-size"
+	"Size": "full-size",
+	"Tn": "http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"
 },
 {
 	"Posting_Title": "a",
@@ -71,7 +73,8 @@
 	"Location_Area": "South Bay Area",
 	"Condition": "New",
 	"Fuel": "gas",
-	"Size": "full-size"
+	"Size": "full-size",
+	"Tn": "http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"
 },
 {
 	"Posting_Title": "a",
@@ -96,5 +99,6 @@
 	"Location_Area": "South Bay Area",
 	"Condition": "New",
 	"Fuel": "gas",
-	"Size": "full-size"
+	"Size": "full-size",
+	"Tn": "http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"
 }]}
