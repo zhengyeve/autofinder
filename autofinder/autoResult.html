@@ -94,7 +94,7 @@
     }
 
     #resultList img {
-        border: 5px solid #C2EBF7;
+        border: 5px solid #f0ad4e;
         float: left;
         width: 80px;
         margin-right: 10px;
@@ -104,14 +104,38 @@
         float: left;
     }
 
-    #resultList .auto-checkbox {
-        float: left;
-        margin-right: 20px;
-    }
     #compareBtn {
         position: fixed;
         bottom: 50px;
         right:  50px;
+    }
+    input[type=checkbox].css-checkbox + label.css-label.cb0 {
+        float: left;
+        margin-right: 20px;
+        padding-left: 41px;
+        height: 36px;
+        display: inline-block;
+        line-height: 36px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        font-size: 36px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    input[type=checkbox].css-checkbox {
+        display: none;
+    }
+    input[type=checkbox].css-checkbox:checked + label.css-label.cb0 {
+        background-position: 0 -36px;
+    }
+    label.css-label.cb0 {
+        background-image: url(http://csscheckbox.com/checkboxes/u/csscheckbox_7172cccfd0fcb45c7f4918d380295581.png);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     </style>
@@ -212,7 +236,9 @@
             var car = cars[c];
             result_html += '<li onclick="checkAuto('+i+')" >';
             result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
-            result_html +=  '<input id="auto_checkbox'+i+'" class="auto-checkbox" type="checkbox" class="checkbox" />';
+            /*result_html +=  '<input id="auto_checkbox'+i+'" class="auto-checkbox" type="checkbox" class="checkbox" />';*/
+            result_html += '<input type="checkbox" name="cbG04" id="auto_checkbox'+i+'" class="css-checkbox"><label for="cbG04" class="css-label cb0"></label>';
+            
             result_html += '<img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/>';
             result_html += '<div class = "auto-content">';
             result_html +=  '<ul class="details-list">';
