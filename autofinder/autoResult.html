@@ -246,19 +246,19 @@
                 <h4 class="modal-title">Error</h4>
               </div>
               <div class="modal-body">
-              <button id="dealer-contact-btn" type="button" class="btn btn-success btn-xs">Contact Seller / Dealer</button>
+              <button id="dealer-contact-btn" type="button" class="btn btn-success btn-xs" onclick="contactDealer(1)">Contact Seller / Dealer</button>
                 <div class="detail-summary-header">
                 <div class="detail-img"><img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/></div>
                 <div class = "detail-summary">
                     <ul class="details-list">
-                        <p>Price: : 1111</p>
-                        <p>Mile: 12233</p>
+                        <p>Price: : 4999</p>
+                        <p>Mile: 122k</p>
                         <p>Postal code: 90032</p>
                     </ul>
                 </div>
                 <div class = "detail-summary">
                     <ul class="details-list">
-                        <p>Engine: : v8</p>
+                        <p>Engine: : 4.6L v8</p>
                         <p>Title: clean title</p>
                         <p>Condition: Like new</p>
                     </ul>
@@ -314,6 +314,53 @@
         </div>
     </div>
 
+    <!-- contact dealer -->
+    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Contact Dealer</h4>
+                </div>
+                
+                <div class="modal-body">
+                    <!-- The form is placed inside the body of modal -->
+                    <form id="contact-form" method="post" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Name</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" name="cust_name" placeholder="your name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" name="cust_email" placeholder="your email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Phone #</label>
+                            <div class="col-md-5">
+                                <input type="tel" class="form-control" name="cust_phone" placeholder="phone number (optional)"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Comments</label>
+                            <div class="col-md-5">
+                                <textarea class="form-control" rows="3" name="cust_comment"  placeholder="comments"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-5 col-md-offset-3">
+                                <button type="submit" class="btn btn-default">submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -335,6 +382,10 @@
     var cars;
     var cars_selected = [];
     var MAX_NUM_COMPARE = 2;
+    function contactDealer(i) {
+        $('#car-detail-modal').modal('hide');
+        $('#contact-modal').modal('show');
+    }
     function checkAuto(i) {
         var idx = cars_selected.indexOf(i);
         $("#checkboxError").hide();
