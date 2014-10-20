@@ -11,6 +11,15 @@
 
     <title>Auto Finder</title>
 
+    <!-- Bootstrap core JavaScript
+     ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,6 +35,10 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- lightbox -->
+    <script src="dist/js/lightbox.min.js"></script>
+    <link rel="stylesheet" href="dist/css/lightbox.css">
 
     <style type="text/css">
     .breadcrumb {
@@ -127,7 +140,7 @@
 
     #resultList li:hover {
         background: #F2FEFF;
-        overflow: visible;
+        /*overflow: visible;*/
     }
 
     #resultList h2 {
@@ -228,11 +241,16 @@
     .price {
         font-weight: bold;
     }
+
+    .lb-image {
+        min-width: 300px
+    }
     </style>
     </style>
   </head>
 
   <body>
+
 
     
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -264,7 +282,6 @@
             <a id="compareBtn" href = "#" onclick="showCompare()" class = "btn btn-warning">Compare NOW</a>
         </ol>
     </div>
-
     <div class="container">
         <div id="resultList"></div>
     </div>
@@ -298,7 +315,9 @@
               <div class="modal-body">
               <button id="dealer-contact-btn" type="button" class="btn btn-success btn-xs" onclick="contactDealer(0)">Contact Seller/Dealer</button>
                 <div class="detail-summary-header">
-                <div class="detail-img"><img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/></div>
+                <div class="detail-img">
+                    <a href="http://images.craigslist.org/00C0C_5ALCvPLD4LV_600x450.jpg" data-lightbox="image-1" data-title="2010 Toyota Camry"><img src="http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"/></a>
+                </div>
                 <div class = "detail-summary">
                     <ul class="details-list">
                         <p>Price: : 1111</p>
@@ -510,14 +529,7 @@
     </div><!-- /.modal -->
 
     
-    <!-- Bootstrap core JavaScript
-     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="./dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+    
     
     <!-- auto finder javascript
     ================================================== -->
@@ -554,7 +566,9 @@
     function showCarDetail(i)
     {
         $('#car-detail-modal .modal-title').html(cars[i].Year+" "+cars[i].Make+" "+cars[i].Model);
-        $('#car-detail-modal .detail-img').html('<img src="'+cars[i].Tn+'"/>');
+        //$('#car-detail-modal .detail-img').html('<img src="'+cars[i].Tn+'"/>');
+        $('#car-detail-modal .detail-img').html('<a href="http://images.craigslist.org/00C0C_5ALCvPLD4LV_600x450.jpg" data-lightbox="image-1" data-title="2010 Toyota Camry"><img src="'+cars[i].Tn+'"/></a>');
+        
         $('#car-detail-modal').modal('show');
 
 
