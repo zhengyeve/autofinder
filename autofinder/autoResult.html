@@ -28,10 +28,21 @@
     <![endif]-->
 
     <style type="text/css">
+    .modal-header {
+        padding:9px 15px;
+        border-bottom:1px solid #eee;
+        background-color: #FF4F4F;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-topright: 5px;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+     }
     #resultList {
         width: 70%;
         margin: 0 auto;
-        border-top: 2px dotted #CCC;
+        border: #46b8da 10px solid;
     }
 
     #resultList ul {
@@ -101,6 +112,14 @@
         bottom: 50px;
         right:  50px;
     }
+
+    .pureCSS input[type=checkbox]:not(old), .pureCSS input[type=radio ]:not(old) {
+        width: 2em;
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        opacity: 0;
+    }
     </style>
   </head>
 
@@ -128,8 +147,29 @@
     </div>
 
     <div class="container">
+    <input id="checkboxPureCSS1" type="checkbox" name="checkboxPureCSS" value="1" checked="checked">
         <div id="resultList"></div>
     </div>
+
+    
+    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Error</h4>
+              </div>
+              <div class="modal-body">
+                <p>Only two car can be selected.&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div><!-- /.modal-content -->
+        </div>
+    </div>
+
+
 
     <a id="compareBtn" href = "#" class = "btn btn-info">Compare NOW</a>
     
@@ -151,6 +191,7 @@
     var MAX_NUM_COMPARE = 2;
     function checkAuto(i) {
         var idx = cars_selected.indexOf(i);
+        $("#checkboxError").hide();
         if (idx < 0){
             // validation
             if (cars_selected.length + 1 <= MAX_NUM_COMPARE){
@@ -159,7 +200,8 @@
             }
             else
             {
-                alert("You can only select "+MAX_NUM_COMPARE+" cars.");
+                $('#contact-modal').modal('show');
+                //$("#checkboxError").fadeIn().delay(5000).fadeOut();
             }
         }else{
             cars_selected.splice(idx,1);
