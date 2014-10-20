@@ -9,7 +9,7 @@
 	"Price": 5500,
 	"Paint_Color": "White",
 	"Make": "Toyota",
-	"Model": "Camery",
+	"Model": "Camry",
 	"Category": "Sedan",
 	"Style": "LX Sedan 4D",
 	"Engine": "6-Cyl, VTEC, 5.0 Liter",
@@ -22,7 +22,7 @@
 	"Condition": "New",
 	"Fuel": "gas",
 	"Size": "full-size",
-	"Tn": "http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"
+	"Tn": "http://images.craigslist.org/00c0c_fRfrWIeTWso_50x50c.jpg"
 },
 {
 	"Posting_Title": "a",
@@ -35,7 +35,7 @@
 	"Price": 7700,
 	"Paint_Color": "White",
 	"Make": "Toyota",
-	"Model": "Camery",
+	"Model": "Camry",
 	"Category": "Sedan",
 	"Style": "LX Sedan 4D",
 	"Engine": "4-Cyl, VTEC, 2.4 Liter",
@@ -43,12 +43,12 @@
 	"Trans": "Automatic",
 	"Title status": "a",
 	"Address": "",
-	"Postal code": "95120",
+	"Postal_code": "95120",
 	"Location_Area": "South Bay Area",
 	"Condition": "New",
 	"Fuel": "gas",
 	"Size": "full-size",
-	"Tn": "http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"
+	"Tn": "http://images.craigslist.org/00K0K_7XYNt1q5agj_50x50c.jpg"
 },
 {
 	"Posting_Title": "a",
@@ -61,7 +61,7 @@
 	"Price": 13400,
 	"Paint_Color": "White",
 	"Make": "Toyota",
-	"Model": "Camery",
+	"Model": "Camry",
 	"Category": "Sedan",
 	"Style": "LX Sedan 4D",
 	"Engine": "4-Cyl, VTEC, 2.4 Liter",
@@ -69,7 +69,7 @@
 	"Trans": "Automatic",
 	"Title status": "a",
 	"Address": "",
-	"Postal_code": "4",
+	"Postal_code": "95144",
 	"Location_Area": "South Bay Area",
 	"Condition": "New",
 	"Fuel": "gas",
@@ -86,8 +86,8 @@
 	"Miles": 11119,
 	"Price": 5900,
 	"Paint_Color": "White",
-	"Make": "BMW",
-	"Model": "330i",
+	"Make": "Toyota",
+	"Model": "Camry",
 	"Category": "Sedan",
 	"Style": "LX Sedan 4D",
 	"Engine": "4-Cyl, VTEC, 2.4 Liter",
@@ -100,5 +100,5 @@
 	"Condition": "New",
 	"Fuel": "gas",
 	"Size": "full-size",
-	"Tn": "http://images.craigslist.org/00m0m_b3jU7AyTQTc_50x50c.jpg"
+	"Tn": "http://images.craigslist.org/00v0v_eqzhjp47rNT_50x50c.jpg"
 }]}
