@@ -15,6 +15,11 @@
      ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- tooltips -->
+    <script type="text/javascript" src="dist/js/tipped/tipped.js"></script>
+    <script type="text/javascript" src="dist/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="dist/css/tipped/tipped.css"/>
+    <!--bootstrap -->
     <script src="./dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -156,7 +161,7 @@
         padding-bottom: 5px;
         padding-top: 20px;
         color: #000000;
-        border-bottom: 1px dotted #CCC;
+        /*border-bottom: 1px dotted #CCC;*/
         margin-bottom: 10px;
     }
 
@@ -173,12 +178,23 @@
 
     #resultList .auto-detail-btn {
         float: right;
+        margin-top: -10px;
     }
-
 
     #compareBtn {
         float: right;
     }
+    #compare-txt {
+        color: #aaaaaa;
+        float: right;
+        margin-right: 15px;
+        vertical-align: center;
+    }
+
+    .checkbox_area {
+        width: 35px;
+    }
+
     input[type=checkbox].css-checkbox + label.css-label.cb0 {
         float: left;
         margin-right: 20px;
@@ -287,6 +303,7 @@
             <li><a href="page3.html">Filter</a></li>
             <li class="active">result&nbsp&nbsp<span class="badge">7</span></a></li>
             <a id="compareBtn" href = "#" onclick="showCompare()" class = "btn btn-warning">Compare NOW</a>
+            <div id="compare-txt">Select two cars to compare</div>
         </ol>
     </div>
     <div class="container">
@@ -561,6 +578,15 @@
             cars_selected.splice(idx,1);
             $("#auto_checkbox"+i).prop("checked", false);
         }
+        // hardcode selected cars
+        switch(cars_selected.length){
+            case 1: $("#compare-txt").html('You selected: <span class="label label-primary">2010 Camry</span>');
+                break;
+            case 2: $("#compare-txt").html('Compare: <span class="label label-primary">2010 Camry</span> <span class="label label-primary">2010 Camry</span>');
+                break;
+            default:
+                $("#compare-txt").html('Select two cars to compare');
+        }
     }
 
     function contactDealer(i){
@@ -596,17 +622,19 @@
         $('#car-detail-modal').modal('show');
       })
 
+      
+
       $.getJSON('sample.json', function(info){
           var i = 0;
           cars = info.cars;
+          $("#auto_checkbox0").attr('title', 'This is the hover-over text');
           //cars.sort(function(a,b) { return b.Make.localeCompare(a.Make) } );
           result_html = '<ul class="resultList">';
           for (c in cars){
             var car = cars[c];
             result_html += '<li>';
-            result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '</h2>';
-            result_html += '<input type="checkbox" name="cbG04" id="auto_checkbox'+i+'" class="css-checkbox"><label for="cbG04" class="css-label cb0" onclick="checkAuto('+i+')"></label>';
-            
+            result_html += '<h2>Used '+ car.Year + " " + car.Make +" " + car.Model + '<button type="button" class="btn btn-primary auto-detail-btn" data-toggle="button" onclick="showCarDetail('+i+')">Details</button></h2>';
+            result_html += '<div class="checkbox_area"><input title="We ask" type="checkbox" name="cbG04" id="auto_checkbox'+i+'" class="css-checkbox"><label for="cbG04" class="css-label cb0" id="checkbox_img'+i+'" onclick="checkAuto('+i+')"></label></div>';
             result_html += '<img src="'+car.Tn+'"/>';
             result_html += '<div class = "auto-content">';
             result_html +=  '<ul class="details-list">';
@@ -615,17 +643,15 @@
             result_html +=  '<p>Postal code: '+ car.Postal_code +'</p>';
             result_html +=  '</ul>';
             result_html += '</div>';
-            result_html += '<div class = "auto-detail-btn">';
-            result_html += '<button type="button" class="btn btn-primary" data-toggle="button" onclick="showCarDetail('+i+')">Details</button>';
-            result_html += '</div>';
 
             result_html += '</li>';
 
             i++;
           }
 
-
+          
           $('#resultList').html(result_html);
+          Tipped.create('.checkbox_area', 'Please select 2 cars to compare.');
 
       }); //getJSON
 
