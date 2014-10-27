@@ -10,6 +10,5 @@ Notice:
 Static dummy dataset is used. No search feature implemented.
 
 References:
-Bootstrap
-Kelly Blue Book
+Bootstrap, Kelly Blue Book
 
